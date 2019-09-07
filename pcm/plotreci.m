@@ -53,6 +53,10 @@ if abs(alpha)==inf
     mii    =  min(imag(zet));
     Lreal  =  mxr-mir;
     Limag  =  mxi-mii;
+    if m==1
+        Lreal=2*Lreal;
+        Limag=2*Limag;
+    end
     mxr    =  mxr+0.15*Lreal;
     mir    =  mir-0.15*Lreal;
     mxi    =  mxi+0.15*Limag;
@@ -100,7 +104,7 @@ end
 % if abs(alpha)<inf
 %     plot(real(alpha),imag(alpha),'or','MarkerFaceColor','r');
 % end
-if m==1
+if m==1 & abs(alpha)<inf
     ax_xp = max(real(et));
     ax_xm = min(real(et));
     ax_yp = max(imag(et));

@@ -69,6 +69,9 @@ if abs(alpha)==inf
     mii    =  min(imag(et));
     neworg = (mxr+mir)/2+i*(mxi+mii)/2;
     mxrad  =  1.15*max(abs(et-neworg)); 
+    if m==1
+        mxrad=1.3*mxrad;
+    end
     tang   =  linspace(0,2*pi,2000);
     trad   =  linspace(0,0.9999,2000);
     for k=1:n_of_cr

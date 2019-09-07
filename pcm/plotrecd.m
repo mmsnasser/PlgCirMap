@@ -69,6 +69,10 @@ if abs(alpha)==inf
     mii    =  min(imag(et));
     Lreal  =  mxr-mir;
     Limag  =  mxi-mii;
+    if m==1
+        Lreal=2*Lreal;
+        Limag=2*Limag;
+    end
     mxr    =  mxr+0.15*Lreal;
     mir    =  mir-0.15*Lreal;
     mxi    =  mxi+0.15*Limag;

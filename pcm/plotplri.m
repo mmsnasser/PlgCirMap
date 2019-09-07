@@ -51,6 +51,9 @@ if abs(alpha)==inf
     mii    =  min(imag(zet));
     neworg = (mxr+mir)/2+i*(mxi+mii)/2;
     mxrad  =  1.15*max(abs(zet-neworg)); 
+    if m==1
+        mxrad=1.3*mxrad;
+    end
     tang   =  linspace(0,2*pi,2000);
     trad   =  linspace(0,0.9999,2000);
     for k=1:n_of_cr
@@ -92,7 +95,7 @@ end
 % if abs(alpha)<inf
 %     plot(real(alpha),imag(alpha),'or','MarkerFaceColor','r');
 % end
-if m==1
+if m==1 & abs(alpha)<inf
     ax_xp = max(real(et));
     ax_xm = min(real(et));
     ax_yp = max(imag(et));

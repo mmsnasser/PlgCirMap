@@ -82,7 +82,7 @@ while (Error> koebetol)
         end
     end    
     if m==1
-        beark;
+        break;
     end         
     if (total_iteration>=koebemaxit)
         disp(['Error of Koebe iterative method  ',...
