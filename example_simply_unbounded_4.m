@@ -15,10 +15,10 @@ alpha = inf;
 tic
 f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
                          % onto the circular domain D with the  
-                         % normalization f(alpha)=0 and f'(alpha)>0
+                         % normalization f(inf)=0 and f'(inf)>0
 % f=plgcirmap(ver,alpha,ver{end}(end));% f is the conformal mapping from  
                          % the domain G onto the circular domain D with the  
-                         % normalization f(alpha)=0 and f(ver{end}(end))=1
+                         % normalization f(inf)=0 and f(ver{1}(end))=1
 toc
 %%
 plotmap(f); % to plot the domain G and the circular domain D 

@@ -17,11 +17,12 @@ alpha = inf;
 %%
 tic
 f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
-                         % onto the circular domain D with the  
-                         % normalization f(alpha)=0 and f'(alpha)>0
+                       % onto the circular domain D with the  
+                       % normalization f(z)=z+O(1/z) near infinity
 % f=plgcirmap(ver,alpha,ver{end}(end));% f is the conformal mapping from  
-                         % the domain G onto the circular domain D with the  
-                         % normalization f(alpha)=0 and f(ver{end}(end))=1
+                       % the domain G onto the circular domain D with the  
+                       % normalization: f(inf)=inf, cent(m)=0, rad(m)=1, 
+                       % and f(ver{end}(end))=1
 toc
 %%
 plotmap(f); % to plot the domain G and the circular domain D 
