@@ -86,6 +86,14 @@ elseif abs(alpha)==inf
     f.inf = [];
 end
 %
+if (m==1 & isempty(preimg1) & abs(alpha)==inf)
+    zet      = (zet-cent)./rad;
+    zetp     =  zetp./rad;
+    f.inf    =  1/rad;
+    cent     =  0;
+    rad      =  1;
+end
+% 
 if (~isempty(preimg1) & abs(alpha)<inf)
     kk       =  length(ver{m});    
     bdzet    =  zet(sum(nv(1:m-1))+(kk-1)*mm*n+1);
