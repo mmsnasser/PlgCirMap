@@ -15,6 +15,11 @@ This folder contains the following files:
 % or from
 % https://github.com/zgimbutas/fmmlib2d
 %
+% Please see: 
+% https://github.com/zgimbutas/fmmlib2d/blob/master/COPYING
+% for more details.
+%
+%
 % PLEASE cite the FMMLIB2D toolbox whenever you use the PlgCirMap toolbox
 %
 % Acknowledgments:
