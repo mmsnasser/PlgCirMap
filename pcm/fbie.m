@@ -27,12 +27,25 @@ function  [mu , h ]  =  fbie(et,etp,A,gam,n,iprec,restart,gmrestol,maxit)
 % pthreadGC2-w32.dll
 % pthreadGC2-w64.dll
 % 
-% from the Toolbox:
-% L. G REENGARD AND Z. G IMBUTAS , FMMLIB2D: A MATLAB toolbox for
+% from the MATLAB Toolbox:
+% L. GREENGARD AND Z. GIMBUTAS , FMMLIB2D: A MATLAB toolbox for
 % fast multipole method in two dimensions, Version 1.2, 2012.
+%
+% You can download the whole toolbox from:
 % http://www.cims.nyu.edu/cmcl/fmm2dlib/fmm2dlib.html
-% 
-% PLEASE cite the FMMLIB2D toolbox whenever you use the function fbie.m.
+% or from
+% https://github.com/zgimbutas/fmmlib2d
+%
+% Please see: 
+% https://github.com/zgimbutas/fmmlib2d/blob/master/COPYING
+% for more details.
+%
+%
+% PLEASE cite the FMMLIB2D toolbox whenever you use the function fbie.m. 
+%
+% Acknowledgments:
+% I would like to thank Prof. Leslie Greengard and Prof. Zydrunas Gimbutas 
+% for making the MATLAB toolbox FMMLIB2D publicly available.
 %
 %
 a        = [real(et.') ; imag(et.')];
