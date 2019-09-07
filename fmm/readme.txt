@@ -9,8 +9,12 @@ This folder contains the following files:
 % from the MATLAB Toolbox:
 % L. G REENGARD AND Z. G IMBUTAS , FMMLIB2D: A MATLAB toolbox for
 % fast multipole method in two dimensions, Version 1.2, 2012.
+%
+% You can download the whole toolbox from:
 % http://www.cims.nyu.edu/cmcl/fmm2dlib/fmm2dlib.html
-% 
+% or from
+% https://github.com/zgimbutas/fmmlib2d
+%
 % PLEASE cite the FMMLIB2D toolbox whenever you use the PlgCirMap toolbox
 %
 % Acknowledgments:
