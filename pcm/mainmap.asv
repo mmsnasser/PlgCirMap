@@ -105,13 +105,8 @@ end
 if (~isempty(preimg1) & abs(alpha)<inf)
     kk = 0;
     for jj=1:length(ver{m})
-        if preimg1==ver{m}(jj)
-            kk=jj;
-        end
-    end
-    if kk==0
-        'error: the fixed point must be one of the corner of Gamma_m'
-    end
+        if preimg1
+    kk       =  length(ver{m});    
     bdzet    =  zet(sum(nv(1:m-1))+(kk-1)*mm*n+1);
     C2       =  exp(-i.*angle(bdzet));
     zet     =  C2.*zet;
@@ -120,15 +115,7 @@ if (~isempty(preimg1) & abs(alpha)<inf)
 end
 % 
 if (~isempty(preimg1) & abs(alpha)==inf)
-    kk = 0;
-    for jj=1:length(ver{m})
-        if preimg1==ver{m}(jj)
-            kk=jj;
-        end
-    end
-    if kk==0
-        'error: the fixed point must be one of the corner of Gamma_m'
-    end
+    kk       =  length(ver{m});    
     bdzet    =  zet(sum(nv(1:m-1))+(kk-1)*n+1);
     C1       =  cent(m);
     C2       =  exp(-i.*angle(bdzet-cent(m)))./rad(m);
