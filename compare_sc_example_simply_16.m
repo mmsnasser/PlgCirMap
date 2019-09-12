@@ -1,7 +1,7 @@
-% compare_sc_example_simply_4.m
+% compare_sc_example_simply_8.m
 % Nasser, September 3, 2019
 % In this code, we consider:
-% bounded simply connected domain G inside polygon with 4 vertices
+% bounded simply connected domain G inside polygon with 17 vertices
 % 
 % For comparison with Schwarz–Christoffel Toolbox, you need to download 
 % the SC toolbox from http://www.math.udel.edu/~driscoll/SC/, then extract
@@ -12,9 +12,10 @@ clc
 clear all
 %
 % The vertices of the polygon
-ver{1} = [ 2+2i; -2+2i; -2-2i; 2-2i];
+ver{1} = [ 3+0i; 2+i; 2+2i; 1+2i; 0+3i; -1+2i; -2+2i; -2+1i; -3+0i; ...
+          -2-1i; -2-2i; -1-2i; 0-3i; 1-2i; 2-2i; 2-1i];
 % Choose alpha, an auxiliary point in the domain G
-alpha =  0+0i;
+alpha =  1i;
 %%
 tic
 % f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
@@ -51,15 +52,14 @@ toc
 %%
 % to plot polar grids in the circular domain D and their images in the 
 % domain G under the invers map using both methods
-plotmap(f,'v','plr',35,21);
+plotmap(f,'v','plr',20,30);
 figure;
-plot(fsc,35,21)
+plot(fsc,20,30)
 %%
 % Checking the accuracy of the toolbox PlgCirMap:
 % 
 % we choose test points: wtest in the circular domain D 
-ttest = linspace(0,2*pi,1000);
-wtest = 0.9.*exp(i.*ttest);
+wtest = 0.9.*exp(i.*linspace(0,2*pi,1000));
 % We compute the values of the test points wtest under the inverse map from
 % D onto G using the toolbox PlgCirMap
 ztestie = evalu(f,wtest,'v');
@@ -77,28 +77,28 @@ error_ie = norm(wtest-evalu(f,ztestie,'d'),inf)
 % Checking the accuracy of the toolbox PlgCirMap:
 % 
 % we choose test points: zztest in the circular domain G 
-zztest  = 1.99.*exp(i.*ttest);
+zz  = 1.99.*exp(i.*linspace(0,2*pi,1000));
 % We compute the values of the test points zztest under the conformal map 
 % from G onto D using the toolbox PlgCirMap
-wwtestie = evalu(f,zztest,'d');
+wzzpc = evalu(f,zz,'d');
 % We compute the values of the test points zztest under the conformal map 
 % from G onto D using the SC toolbox 
-wwtestsc = eval(inv(fsc),zztest);
+wzzsc = eval(inv(fsc),zz);
 % We compute the maximum norm of the different between the computed values
-error_map = norm(wwtestie-wwtestsc,inf)
+error_map = norm(wzzpc-wzzsc,inf)
 % We compute the maximum norm of the different between the test points 
 % zztest and the computed values of f^-1(f(zztest)) for SC toolbox
-error_sc = norm(zztest-fsc(wwtestsc),inf)
+error_sc = norm(zz-fsc(wzzsc),inf)
 % We compute the maximum norm of the different between the test points 
 % zztest and the computed values of f^-1(f(zztest)) for PlgCirMap toolbox 
-error_ie = norm(zztest-evalu(f,wwtestie,'v'),inf)
+error_ie = norm(zz-evalu(f,wzzpc,'v'),inf)
 %%
 % Checking the accuracy of the toolbox PlgCirMap:
 % 
 % The prevertices computed using SC toolbox
 prevertsc = get(fsc,'prevert');
 % The prevertices computed using PlgCirMap toolbox
-prevertie = f.imgver{1};
+prevertie = f.imgver{:};
 % We compute the maximum norm of the different between the computed values
 error_prevert = norm(prevertsc-prevertie,inf)
 %%

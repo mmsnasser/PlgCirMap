@@ -1,4 +1,4 @@
-% example_multiply_u3.m
+% example_multiply_u4.m
 % Nasser, September 6, 2019
 % In this code, we consider:
 % unbounded multiply connected domain G of connectivity 4
@@ -10,8 +10,8 @@ clear all
 % The vertices of the polygons (the vertices must be clockwise oriented)
 ver{1}=[ 1.5+1.0i ;  1.5+0.0i ;  0.5+0.0i ; 0.5+1.0i];
 ver{2}=[ 0.0+1.0i ;  0.0+0.5i ; -1.0+0.5i ; -1.5-1.0i ; -1.5+1.0i];
-ver{3}=[-0.5-0.0i ;  0.0-0.5i ;  0.0-1.0i ; -1.0-1.0i ; -1.0-0.5i];
-ver{4}=[ 1.5-0.5i ;  1.5-2.0i ; -1.5-2.0i ; -1.5-1.5i ;  0.5-1.5i ;  0.5-0.5i];
+ver{3}=[ 0.0-1.0i ; -1.0-1.0i ; -1.0-0.5i ; -0.5-0.0i ;  0.0-0.5i];
+ver{4}=[-1.5-2.0i ; -1.5-1.5i ;  0.5-1.5i ;  0.5-0.5i ;  1.5-0.5i ;  1.5-2.0i];
 % The domain G is unbounded. So, we choose alpha=inf.
 alpha = inf;
 %%
@@ -26,18 +26,22 @@ f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
 toc
 %%
 plotmap(f); % to plot the domain G and the circular domain D 
-plotmap(f,'v','plr',21,21); % to plot polar grids in the circular domain
-                              % D and their images in the domain G under  
-                              % the invers map
-plotmap(f,'v','rec',21,21); % to plot rectangular grids in the circular 
-                              % domain D and their images in the domain G
-                              % under the invers map
+%%
 plotmap(f,'d','rec',21,21); % to plot rectangular grids in the domain 
                               % G and their images in the circular domain  
                               % D under the conformal map
+%%
 plotmap(f,'d','plr',21,21); % to plot polar grids in the domain 
                               % G and their images in the circular domain  
                               % D under the conformal map
+%%
+plotmap(f,'v','rec',21,21); % to plot rectangular grids in the circular 
+                              % domain D and their images in the domain G
+                              % under the invers map
+%%
+plotmap(f,'v','plr',21,21); % to plot polar grids in the circular domain
+                              % D and their images in the domain G under  
+                              % the invers map
 %%
 
 %%
@@ -45,7 +49,7 @@ plotmap(f,'d','plr',21,21); % to plot polar grids in the domain
 % 
 % we choose test points: ztest in the domain G 
 ttest   =  linspace(0,2*pi,1000);
-ztest   =  3.*exp(i.*ttest);
+ztest   =  2.55.*exp(i.*ttest);
 % We compute the images of the test points ztest under the conformal map 
 % from G onto D 
 wtest   =  evalu(f,ztest,'d');

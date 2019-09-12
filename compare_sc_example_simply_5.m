@@ -14,7 +14,7 @@ clear all
 % The vertices of the polygon
 ver{1}=[ i ; -1+i ; -1-i ; 1-i ; 1 ];
 % Choose alpha, an auxiliary point in the domain G
-alpha =  0;
+alpha = -0.5;
 %%
 tic
 % f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
@@ -26,15 +26,19 @@ f=plgcirmap(ver,alpha,ver{1}(end));% f is the conformal mapping from the
 toc
 %%
 % plotmap(f); % to plot the domain G and the circular domain D 
-% plotmap(f,'v','plr',21,21); % to plot polar grids in the circular domain
+%%
+plotmap(f,'v','plr',20,25); % to plot polar grids in the circular domain
                               % D and their images in the domain G under  
                               % the invers map
+%%                              
 % plotmap(f,'v','rec',21,21); % to plot rectangular grids in the circular 
                               % domain D and their images in the domain G
                               % under the invers map
+%%
 % plotmap(f,'d','rec',21,21); % to plot rectangular grids in the domain 
                               % G and their images in the circular domain  
                               % D under the conformal map
+%%
 % plotmap(f,'d','plr',21,21); % to plot polar grids in the domain 
                               % G and their images in the circular domain  
                               % D under the conformal map
@@ -43,17 +47,17 @@ addpath sc % to use the Schwarz–Christoffel Toolbox
 options = scmapopt('Tolerance',1e-14); % the accuracet for SC toolbox
 p=polygon(ver{1}); 
 tic
-fsc = diskmap(p,options);
-toc
-fsc = center(fsc,alpha);% fsc=f^-1 is the invers map from the circular 
+fsc = center(diskmap(p,options),alpha);% fsc=f^-1 is the invers map from the circular 
                         % domain D onto the domain G compute by SC toolbox
                         % such that fsc(0)=alpha, fsc(1)=ver{1}(end)
+toc
 %%
 % to plot polar grids in the circular domain D and their images in the 
 % domain G under the invers map using both methods
-plotmap(f,'v','plr',35,21);
+plotmap(f,'v','plr',20,25);
+%%
 figure;
-plot(fsc,35,21)
+plot(fsc,20,25)
 %%
 % Checking the accuracy of the toolbox PlgCirMap:
 % 

@@ -18,12 +18,12 @@ ver{4}=[ 2.0+2.0i ; -2.0+2.0i ; -2.0-2.0i ; 2.0-2.0i];
 alpha = 0;
 %%
 tic
-f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
+% f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
                          % onto the circular domain D with the  
                          % normalization f(alpha)=0 and f'(alpha)>0
-% f=plgcirmap(ver,alpha,ver{end}(end));% f is the conformal mapping from  
+f=plgcirmap(ver,alpha,ver{end}(3));% f is the conformal mapping from  
                          % the domain G onto the circular domain D with the  
-                         % normalization f(alpha)=0 and f(ver{end}(end))=1
+                         % normalization f(alpha)=0 and f(ver{end}(k))=1
 toc
 %%
 plotmap(f); % to plot the domain G and the circular domain D 

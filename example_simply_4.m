@@ -11,10 +11,10 @@ ver{1} = [ 2+2i; -2+2i; -2-2i; 2-2i];
 alpha =  0+0i;
 %%
 tic
-f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
+% f=plgcirmap(ver,alpha);% f is the conformal mapping from the domain G
                          % onto the circular domain D with the  
                          % normalization f(alpha)=0 and f'(alpha)>0
-% f=plgcirmap(ver,alpha,ver{1}(end));% f is the conformal mapping from the 
+f=plgcirmap(ver,alpha,ver{1}(2));% f is the conformal mapping from the 
                          % domain G onto the circular domain D with the  
                          % normalization f(alpha)=0 and f(ver{1}(end))=1
 toc

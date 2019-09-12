@@ -6,7 +6,9 @@ ver{3}=[ 0.71-0.54i ; -0.71-0.64i ; -0.38+0.85i ;  0.56+0.64i];
 alpha = inf;
 %%
 % f=plgcirmap(ver,alpha);
-f=plgcirmap(ver,alpha,ver{end}(end));
+tic
+f=plgcirmap(ver,alpha,ver{end}(2));
+toc
 %%
 plotmap(f);
 %%
