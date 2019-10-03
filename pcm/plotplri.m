@@ -21,8 +21,8 @@ ver    =  f.ver;
 m      =  length(ver);
 %%
 if abs(alpha)<inf
-    tang   =  linspace(0,2*pi,2000);
-    trad   =  [linspace(0,0.9,1000),linspace(0.9,0.99999,1000)];
+    tang   =  linspace(0,2*pi,1000);
+    trad   =  [linspace(0,0.9,500),linspace(0.9,0.99999,500)];
     for k=1:n_of_cr
         cirp{k} = (k/(n_of_cr+1)).*exp(i.*tang);
         for j=1:m-1
@@ -54,8 +54,8 @@ if abs(alpha)==inf
     if m==1
         mxrad=1.3*mxrad;
     end
-    tang   =  linspace(0,2*pi,2000);
-    trad   =  linspace(0,0.9999,2000);
+    tang   =  linspace(0,2*pi,1000);
+    trad   =  linspace(0,0.9999,1000);
     for k=1:n_of_cr
         cirp{k} = neworg+(mxrad*k/(n_of_cr)).*exp(i.*tang);
         for j=1:m

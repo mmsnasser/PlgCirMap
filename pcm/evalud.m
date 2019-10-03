@@ -56,8 +56,8 @@ function w = evalud (f,z,b)
 %          normalized by:  f(alpha)=0 and f'(alpha)>0
 % 
 % 
-% Output: ww (the computed values of the function f or its inverse at the
-%             points zz).
+% Output: ww (the computed values of the derivative of mapping function f
+% or the derivative of inverse mapping at the points zz).
 % 
 %
 nv     =  f.nv;
