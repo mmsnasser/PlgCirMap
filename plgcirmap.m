@@ -2,14 +2,12 @@ function   f = plgcirmap(ver,alpha,preimg1)
 % plgcirmap.m (polygons domains to circular domains map)
 % Nasser, September 3, 2019
 %
-% 
 % This MATLAB function compute the conformal mapping w=f(z) from a polygon
 % domain G onto a circular domin D and its invers z=f^-1(w). The domain G
 % is multiply connected of connectivity m with the boundary
 % \Gamma=\Gamma_1 U ... U \Gamma_m. If G is bounded, then the external
 % boundary component is \Gamma_m.
 % When m=1, the domain G is simply connected domain.
-% 
 % 
 % Input:
 % ver (ver is a Cell Array where ver{k} contains the vertices of the 
@@ -46,14 +44,14 @@ function   f = plgcirmap(ver,alpha,preimg1)
 %                    conformal map, i.e., imgver=f(ver)). 
 % f.inf (only for unbounded G where f.inf=f'(inf)
 % 
-% 
-% 
-% 
 addpath pcm fmm % add the path of the required functions 
-%
 %
 m            = length(ver); % number of polygons
 n            = 2^9; % number of node points in each side of the polygons
+                    % the accuracy of the results can be improved by 
+                    % increasing the value of n. 
+                    % However, choosing very large value of n could cause 
+                    % a problem with the convergence (with the FMM method).
 iprec        = 4; % the accuracy of the FMM method is 0.5e-12
 gmresrestart = []; % the GMRES method is used without restart
 gmrestol     = 0.5e-12; % tolerances of the GMRES method
