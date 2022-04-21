@@ -63,7 +63,7 @@ function   f = mainmap(ver,alpha,preimg1,m,n,iprec,gmresrestart,gmrestol,gmresma
 f.ver        =  ver;
 f.alpha      =  alpha;
 %
-mm  =   2;
+mm  =   1;
 for k=1:m
     nv(k)    =   length(ver{k})*n;
     if k==m & abs(alpha)<inf
